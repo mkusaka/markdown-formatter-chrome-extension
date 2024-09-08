@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Markdown Formatter",
-  "version": "1.0",
+  "name": "Markdown Formatter using Prettier",
+  "version": "0.1",
   "description": "Format text input as markdown using Prettier when cmd+opt+Semicolon is pressed",
   "content_scripts": [
     {
