@@ -1,0 +1,20 @@
+{
+  "name": "text-format-prettier-extension",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.270",
+    "@types/prettier": "^2.7.3",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "prettier": "^2.8.8"
+  }
+}
