@@ -55,6 +55,7 @@ function simulateUserReplace(
   document.execCommand("delete", false);
   console.timeEnd("Delete Operation");
 
+  
   // Measure time for insert operation
   console.time("Insert Operation");
   document.execCommand("insertText", false, formattedText);

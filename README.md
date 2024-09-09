@@ -15,8 +15,6 @@ A Chrome extension that formats the content of text input fields and text areas 
 1. Clone or download this repository.
 
     ```bash
-    bash
-    Copy code
     git clone https://github.com/mkusaka/markdown-formatter-chrome-extension.git
     cd text-format-prettier-extension
     
@@ -26,14 +24,12 @@ A Chrome extension that formats the content of text input fields and text areas 
 
     ```bash
     pnpm install
-    
     ```
 
 3. Build the extension:
 
     ```bash
     pnpm run build
-    
     ```
 
 4. Open Chrome and go to `chrome://extensions/`.
@@ -57,7 +53,6 @@ To make changes or develop further, follow these steps:
 
     ```bash
     pnpm run build
-    
     ```
 
 3. Reload the extension in Chrome via the `chrome://extensions/` page by clicking the **Reload** button.
