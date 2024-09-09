@@ -1,7 +1,7 @@
 import prettier from "prettier";
 import markdownParser from "prettier/parser-markdown";
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", async (event) => {
   const activeElement = document.activeElement as
     | HTMLTextAreaElement
     | HTMLInputElement
@@ -17,36 +17,49 @@ document.addEventListener("keydown", (event) => {
       activeElement.tagName === "TEXTAREA" ||
       activeElement.tagName === "INPUT"
     ) {
-      // Save the cursor position
+      console.time("Total Time"); // Start measuring total time
+
+      // Measure Prettier formatting time
+      console.time("Prettier Formatting");
       const start = activeElement.selectionStart ?? 0;
-      const end = activeElement.selectionEnd ?? 0;
       const formattedText = prettier.format(activeElement.value, {
         parser: "markdown",
         plugins: [markdownParser],
       });
+      console.timeEnd("Prettier Formatting"); // End measuring Prettier formatting time
 
-      // Use execCommand to insert text and preserve undo history
-      insertFormattedTextWithUndo(activeElement, formattedText, start, end);
+      // Measure time taken to simulate user interaction
+      console.time("Simulate User Replace");
+      simulateUserReplace(activeElement, formattedText, start);
+      console.timeEnd("Simulate User Replace"); // End measuring user interaction simulation
+
+      console.timeEnd("Total Time"); // End measuring total time
     }
   }
 });
 
-function insertFormattedTextWithUndo(
+function simulateUserReplace(
   element: HTMLTextAreaElement | HTMLInputElement,
   formattedText: string,
-  start: number,
-  end: number
+  start: number
 ) {
-  // Focus the element first
   element.focus();
 
-  // Select the current range
-  element.setSelectionRange(start, end);
+  // Measure time taken to select all text
+  console.time("Text Selection");
+  element.setSelectionRange(0, element.value.length);
+  console.timeEnd("Text Selection");
 
-  // Use document.execCommand to insert the formatted text
-  // This may preserve undo history in certain browsers
+  // Measure time for delete operation
+  console.time("Delete Operation");
+  document.execCommand("delete", false);
+  console.timeEnd("Delete Operation");
+
+  // Measure time for insert operation
+  console.time("Insert Operation");
   document.execCommand("insertText", false, formattedText);
+  console.timeEnd("Insert Operation");
 
-  // Restore the cursor position after the insertion
-  element.setSelectionRange(start, start + formattedText.length);
+  // Restore the cursor position
+  element.setSelectionRange(start, start);
 }
