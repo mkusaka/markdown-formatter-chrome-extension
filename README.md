@@ -12,6 +12,11 @@ A Chrome extension that formats the content of text input fields and text areas 
 
 ## Installation
 
+### Chrome Web Store
+
+https://github.com/mkusaka/markdown-formatter-chrome-extension
+
+### Manually
 1. Clone or download this repository.
 
     ```bash
