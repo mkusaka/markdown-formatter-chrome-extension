@@ -14,7 +14,7 @@ A Chrome extension that formats the content of text input fields and text areas 
 
 ### Chrome Web Store
 
-https://github.com/mkusaka/markdown-formatter-chrome-extension
+https://chromewebstore.google.com/detail/markdown-formatter-using/gankejkdaggcgldemjbpnjhfcpijnlcd
 
 ### Manually
 1. Clone or download this repository.
