@@ -17,24 +17,12 @@ document.addEventListener("keydown", async (event) => {
       activeElement.tagName === "TEXTAREA" ||
       activeElement.tagName === "INPUT"
     ) {
-      console.time("Total Time"); // Start measuring total time
-
-      // Measure Prettier formatting time
-      console.time("Prettier Formatting");
       const start = activeElement.selectionStart ?? 0;
       const formattedText = prettier.format(activeElement.value, {
         parser: "markdown",
         plugins: [markdownParser],
       });
-      console.timeEnd("Prettier Formatting"); // End measuring Prettier formatting time
-
-      // Measure time taken to simulate user interaction
-      console.time("Simulate User Replace");
       simulateUserReplace(activeElement, formattedText, start);
-      console.timeEnd("Simulate User Replace"); // End measuring user interaction simulation
-
-      console.timeEnd("Total Time"); // End measuring total time
-    }
   }
 });
 
