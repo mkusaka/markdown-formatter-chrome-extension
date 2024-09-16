@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --config vite.config.popup.ts && vite build --config vite.config.content.ts",
     "preview": "vite preview",
     "package": "rm -f pacakge.zip && yarn build && zip -r package.zip . -x '.git/**' './node_modules/**' 'yarn*' '*.ts' '.idea/**' 'tsconfig.json' 'package.json' '.gitignore'"
   },

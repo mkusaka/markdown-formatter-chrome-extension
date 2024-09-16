@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   build: {
     outDir: "dist",
+    emptyOutDir: false,
     rollupOptions: {
       input: {
         content: "src/content.ts",
@@ -11,6 +12,6 @@ export default defineConfig({
         entryFileNames: "[name].js",
       },
     },
-    minify: false,
+    minify: true,
   },
 });

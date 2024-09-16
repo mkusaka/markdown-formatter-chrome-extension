@@ -8,5 +8,9 @@
       "matches": ["<all_urls>"],
       "js": ["dist/content.js"]
     }
-  ]
+  ],
+  "permissions": ["clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }
