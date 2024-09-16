@@ -23,6 +23,7 @@ document.addEventListener("keydown", async (event) => {
         plugins: [markdownParser],
       });
       simulateUserReplace(activeElement, formattedText, start);
+    }
   }
 });
 
