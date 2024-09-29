@@ -18,10 +18,16 @@ document.addEventListener("keydown", async (event) => {
       activeElement.tagName === "INPUT"
     ) {
       const start = activeElement.selectionStart ?? 0;
+      // current value of this element
+      const currentValue = activeElement.value;
       const formattedText = prettier.format(activeElement.value, {
         parser: "markdown",
         plugins: [markdownParser],
       });
+      // if not changed, then return
+      if (currentValue === formattedText) {
+        return;
+      }
       simulateUserReplace(activeElement, formattedText, start);
     }
   }
@@ -30,25 +36,15 @@ document.addEventListener("keydown", async (event) => {
 function simulateUserReplace(
   element: HTMLTextAreaElement | HTMLInputElement,
   formattedText: string,
-  start: number
+  start: number,
 ) {
   element.focus();
 
-  // Measure time taken to select all text
-  console.time("Text Selection");
   element.setSelectionRange(0, element.value.length);
-  console.timeEnd("Text Selection");
 
-  // Measure time for delete operation
-  console.time("Delete Operation");
   document.execCommand("delete", false);
-  console.timeEnd("Delete Operation");
 
-  
-  // Measure time for insert operation
-  console.time("Insert Operation");
   document.execCommand("insertText", false, formattedText);
-  console.timeEnd("Insert Operation");
 
   // Restore the cursor position
   element.setSelectionRange(start, start);
