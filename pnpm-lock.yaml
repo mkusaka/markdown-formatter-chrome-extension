@@ -13,8 +13,8 @@ importers:
         version: 2.8.8
     devDependencies:
       '@types/chrome':
-        specifier: ^0.0.271
-        version: 0.0.271
+        specifier: ^0.0.272
+        version: 0.0.272
       '@types/prettier':
         specifier: ^2.7.3
         version: 2.7.3
@@ -245,8 +245,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@types/chrome@0.0.271':
-    resolution: {integrity: sha512-K0qgXvkwA5ic+/eygF1xiypHEvCoBgH5lwrhg3yva2mqJuCWyYm0vpZQ22GksAxgGfo0PWev9Zx3plp2clMlwg==}
+  '@types/chrome@0.0.272':
+    resolution: {integrity: sha512-9cxDmmgyhXV8gsZvlRjqaDizNjIjbV0spsR0fIEaQUoHtbl9D8VkTOLyONgiBKK+guR38x5eMO3E3avUYOXwcQ==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -454,7 +454,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.3':
     optional: true
 
-  '@types/chrome@0.0.271':
+  '@types/chrome@0.0.272':
     dependencies:
       '@types/filesystem': 0.0.36
       '@types/har-format': 1.2.15
