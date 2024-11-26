@@ -14,7 +14,7 @@
     "@types/chrome": "^0.0.272",
     "@types/prettier": "^2.7.3",
     "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+    "vite": "^6.0.0"
   },
   "dependencies": {
     "prettier": "^2.8.8"
