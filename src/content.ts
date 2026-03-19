@@ -20,7 +20,7 @@ document.addEventListener("keydown", async (event) => {
       const start = activeElement.selectionStart ?? 0;
       // current value of this element
       const currentValue = activeElement.value;
-      const formattedText = prettier.format(activeElement.value, {
+      const formattedText = await prettier.format(activeElement.value, {
         parser: "markdown",
         plugins: [markdownParser],
       });
