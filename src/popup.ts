@@ -8,11 +8,11 @@ const copyMessage = document.getElementById("copyMessage");
 const formatButton = document.getElementById("formatButton");
 
 // Listen for button click
-formatButton?.addEventListener("click", () => {
+formatButton?.addEventListener("click", async () => {
   const markdownText = (markdownInput as HTMLInputElement).value;
 
   // Format the markdown using Prettier
-  const formattedText = prettier.format(markdownText, {
+  const formattedText = await prettier.format(markdownText, {
     parser: "markdown",
     plugins: [markdownParser],
   });
