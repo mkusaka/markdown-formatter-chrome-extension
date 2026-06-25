@@ -11,13 +11,13 @@
     "package": "rm -f pacakge.zip && yarn build && zip -r package.zip . -x '.git/**' './node_modules/**' 'yarn*' '*.ts' '.idea/**' 'tsconfig.json' 'package.json' '.gitignore'"
   },
   "devDependencies": {
-    "@types/chrome": "^0.1.0",
-    "@types/prettier": "^3.0.0",
-    "typescript": "^6.0.0",
+    "@types/chrome": "0.1.37",
+    "@types/prettier": "3.0.0",
+    "typescript": "6.0.3",
     "vite": "^8.0.0"
   },
   "dependencies": {
     "prettier": "^3.0.0"
   },
-  "packageManager": "pnpm@11.5.2"
+  "packageManager": "pnpm@11.8.0"
 }
